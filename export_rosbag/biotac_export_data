@@ -1,8 +1,9 @@
 #!/bin/bash
 biotac_export_electrode $1 $2
 biotac_export_pac $1 $2
-biotac_export_position $1 $2
+biotac_export_pdc $1 $2
+# biotac_export_position $1 $2
 biotac_export_serial $1 $2
 biotac_export_tac $1 $2
 biotac_export_tdc $1 $2
-biotac_export_time $1 $2
+biotac_export_bt_time $1 $2
