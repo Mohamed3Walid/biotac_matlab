@@ -20,4 +20,4 @@ Then to export e.g. electrode data:
 
     biotac_export_electrode <rosbag_file> <output_prefix>
 
-Produces an ''<prefix>_electrode.txt'' file. For exporting everything use the **biotac_export_data** command.
+Produces an **\<output_prefix\>_electrode.txt** file. For exporting everything use the **biotac_export_data** command.
