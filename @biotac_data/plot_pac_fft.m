@@ -1,13 +1,13 @@
-function [obj] = plot_pac_fft(obj)
+function [obj] = plot_pac_fft(obj, finger)
 %PLOT_PAC_FFT plots fft of pac signal
 %
-% function [ obj ] = plot_pac_fft(obj)
+% function [ obj ] = plot_pac_fft(obj, finger)
 % 
 % function
 
 L = size(obj.pac,1);
 NFFT = 2^nextpow2(L);
-pac_fft = fft(obj.pac(:,2), NFFT)/L;
+pac_fft = fft(obj.pac(:,2,finger), NFFT)/L;
 Fs = 2200;
 f = (Fs/2)*linspace(0,1,NFFT/2+1);
 

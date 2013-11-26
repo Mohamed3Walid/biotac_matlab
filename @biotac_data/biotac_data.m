@@ -3,7 +3,7 @@ classdef biotac_data < handle
     % from 3 fingers.
     
     properties
-        bt_time 
+        bt_time % Dim: n_samplesx47
         
         % the first column are the time stamps
         % from the second till last column is the signal
@@ -18,8 +18,12 @@ classdef biotac_data < handle
     methods        
         % load data from txt file *_pac1.txt, *_electro1.txt, etc
         % prefix: string prefix
-        obj = load_data(obj, prefix)
-        obj = plot_pac_fft(obj);
+        obj = load_data(obj, prefix);
+        
+        obj = plot_pac_fft(obj, finger);
+        
+        obj2 = truncate(obj, t_interval);
+        
         
         function plot_electrode(obj, finger)
             plot(obj.electrode(:,2:end, finger));   

@@ -9,7 +9,7 @@ function [obj] = load_data(obj, prefix )
 % 
 
 %% Fix some constants
-frame_start_time_index = 2; % 1 for ROS message time stamp, 2 for frame_start_time field 
+frame_start_time_index = 1; % 1 for ROS message time stamp, 2 for frame_start_time field 
 
 %% Electrode signals
 obj.bt_time = load(strcat(prefix,'_bt_time.txt'));
