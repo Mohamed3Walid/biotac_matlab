@@ -1,0 +1,4 @@
+#!/bin/bash
+rostopic echo -b $1 -p /biotac_pub/bt_data[0]/pac_data > $2_pac1.txt
+rostopic echo -b $1 -p /biotac_pub/bt_data[1]/pac_data > $2_pac2.txt
+rostopic echo -b $1 -p /biotac_pub/bt_data[2]/pac_data > $2_pac3.txt
