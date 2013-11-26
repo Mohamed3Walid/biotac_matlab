@@ -28,7 +28,7 @@ Importing into Matlab
 Use the biotac_data class contained in the **@biotac_data** directory
 
 1. Add the `biotac_matlab` directory to your MATLAB path
-2. Create a biotac_data object:
+2. Create a biotac_data object in Matlab:
 
     <code>
     x = biotac\_data\( \);
