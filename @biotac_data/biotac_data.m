@@ -5,7 +5,7 @@ classdef biotac_data < handle
     properties
         bt_time % Dim: n_samplesx47
         
-        % the first column are the time stamps
+        % the first column are the time stamps in [ns]
         % from the second till last column is the signal
         % the last index indicates the finger number (1-3)        
         electrode % Dim: n_samplesx20x3
@@ -23,11 +23,17 @@ classdef biotac_data < handle
         obj = plot_pac_fft(obj, finger);
         
         obj2 = truncate(obj, t_interval);
-        
-        
-        function plot_electrode(obj, finger)
-            plot(obj.electrode(:,2:end, finger));   
-            legend('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19');
+         
+             
+        function plot_electrodes(obj,electrodes,finger)
+            %PLOT_ELECTRODES plots the electrode values from a particular
+            %finger
+            %
+            % 'electrodes' argument is array containing electrodes that we
+            % wish to plot. For plotting all of them do electrodes=(1:19).
+            plot(obj.electrode(:,electrodes+1,finger));
+            electrode_numbers = num2str(electrodes(:));
+            legend(electrode_numbers);
         end
         
         function plot_pac(obj, finger)
